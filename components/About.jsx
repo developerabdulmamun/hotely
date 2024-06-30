@@ -11,21 +11,33 @@ import Stats from "./Stats";
 
 const About = () => {
   return (
-    <section className="py-12 xl:py-24">
+    <section className="py-12 xl:pt-0 xl:pb-24">
       <div className="container">
         <div className="flex flex-col xl:flex-row">
           {/* img */}
-          <div className="flex-1 relative">
+          <motion.div
+            variants={fadeIn("right", 0.2)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.4 }}
+            className="flex-1 relative"
+          >
             <Image
               src={"/about/img2.png"}
               width={559}
               height={721}
               alt="about photo"
             />
-          </div>
+          </motion.div>
 
           {/* text */}
-          <div className="xl:max-w-[470px]">
+          <motion.div
+            variants={fadeIn("left", 0.5)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.4 }}
+            className="xl:max-w-[470px]"
+          >
             <h2 className="h2 mb-[38px]">About Hotely</h2>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel,
@@ -44,7 +56,7 @@ const About = () => {
               error?
             </p>
             <Button variant="accent">Explore More</Button>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
