@@ -10,8 +10,16 @@ import Image from "next/image";
 import Stats from "./Stats";
 
 const About = () => {
+  const isMobile = useMediaQuery({
+    query: "(max-width: 768px)",
+  });
+
+  const [ref, inView] = useInView({
+    threshold: !isMobile ? 0.5 : null,
+  });
+
   return (
-    <section className="py-12 xl:pt-0 xl:pb-24">
+    <section className="py-12 xl:pt-0 xl:pb-24" ref={ref}>
       <div className="container">
         <div className="flex flex-col xl:flex-row">
           {/* img */}
@@ -47,7 +55,7 @@ const About = () => {
             </p>
             {/* stats */}
             <div className="my-5 xl:my-10 min-h-[35px]">
-              <Stats />
+              {inView && <Stats />}
             </div>
             <p className="mb-10">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui nisi
