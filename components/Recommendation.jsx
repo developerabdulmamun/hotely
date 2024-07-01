@@ -123,6 +123,15 @@ const Recommendation = () => {
           })}
         </Swiper>
       </motion.div>
+
+      {/* pattern */}
+      <Image
+        src={"/recommendation/pattern.svg"}
+        width={240}
+        height={240}
+        alt="pattern"
+        className="hidden xl:flex absolute left-[135px] -bottom-[120px]"
+      />
     </motion.section>
   );
 };
