@@ -28,3 +28,9 @@
     @apply text-xl;
   }
 }
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-patination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  @apply bg-white;
+}
