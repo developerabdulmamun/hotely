@@ -18,7 +18,6 @@ export default function Home() {
       <Find />
       <Testimonial />
       <Footer />
-      <div className="h-[4000px]"></div>
     </main>
   );
 }
